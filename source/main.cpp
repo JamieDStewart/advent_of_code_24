@@ -8,7 +8,7 @@
 #include "result.h"
 
 
-std::vector< Result( * )() > questions = { aoc::day_01 };
+std::vector< Result( * )() > questions = { aoc::day_01, aoc::day_02 };
 
 void print_break_to_console()
 {

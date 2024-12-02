@@ -1,8 +1,7 @@
 //\==============================================================================
-// Advent of code 2023 Day 1
-// Question: https://adventofcode.com/2023/day/1
-// Gist:  Elves Tebucheting you into sky, calibration values all muddled up in input
-// Input data: calibration values mixed with letters
+// Advent of code 2024 Day 1
+// Question: https://adventofcode.com/2024/day/1
+// Gist:  Historian Hysteria - map column A to column B
 //\==============================================================================
 
 
@@ -68,7 +67,7 @@ namespace day_01
 	 * @brief function to solve part 1 of the problem for day 1.
 	 *        
 	 */
-	uint32_t part_1( Input& input )
+	uint64_t part_1( Input& input )
 	{
 		//sort the two input columns then calculate the difference between each pair
 		std::sort(input.column_1.begin(), input.column_1.end());
@@ -86,7 +85,7 @@ namespace day_01
 	 * @brief Function to solve part 2 of the question
 	 *        
 	 */
-	uint32_t part_2( Input& input )
+	uint64_t part_2( Input& input )
 	{
 		//for part 2 use a map to track frequency of values in second column
 		std::map< int64_t, int64_t> value_frequency;
@@ -110,8 +109,8 @@ Result aoc::day_01()
 	//vector to store the total quantity of calories that an elf is carrying
 	day_01::Input input = day_01::read_input_from_file( "./input/day_01.txt" );
 
-	const uint32_t part_1 = day_01::part_1(input);
-	const uint32_t part_2 = day_01::part_2(input);
+	const uint64_t part_1 = day_01::part_1(input);
+	const uint64_t part_2 = day_01::part_2(input);
 	timer::stop();
 
 	return { std::string(" 1: Historian Hysteria"), part_1, part_2, timer::get_elapsed_seconds()};

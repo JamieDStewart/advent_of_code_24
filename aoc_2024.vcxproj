@@ -84,7 +84,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\day_01.cpp" />
-    
+    <ClCompile Include="source\day_02.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\timer.cpp" />
   </ItemGroup>
