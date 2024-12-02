@@ -27,9 +27,6 @@
 namespace day_02
 {
 
-	/**
-	* For part 1 we need to read in data as two vectors
-	*/
 	struct Report
 	{
 		std::vector<int64_t> values;
@@ -137,7 +134,7 @@ namespace day_02
 Result aoc::day_02()
 {
 	timer::start();
-	//vector to store the total quantity of calories that an elf is carrying
+	
 	std::vector<day_02::Report> input = day_02::read_input_from_file("./input/day_02.txt");
 
 	const uint64_t part_1 = day_02::part_1(input);

@@ -106,7 +106,6 @@ namespace day_01
 Result aoc::day_01()
 {
 	timer::start();
-	//vector to store the total quantity of calories that an elf is carrying
 	day_01::Input input = day_01::read_input_from_file( "./input/day_01.txt" );
 
 	const uint64_t part_1 = day_01::part_1(input);
