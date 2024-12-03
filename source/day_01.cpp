@@ -42,23 +42,20 @@ namespace day_01
 	{
 		Input input_data = {};
 		//open the input file for reading
-		std::ifstream file_input;
-		file_input.open( input_file );
-		if ( file_input.is_open() )
+		if ( std::ifstream file_input( input_file ); file_input.is_open() )
 		{
 			for ( std::string line; std::getline( file_input, line ); )
 			{
-				if ( line.length() > 0 )
+				if ( !line.empty() )
 				{
 					uint64_t col1, col2;
-					std::stringstream input_line(line);
+					std::stringstream input_line( line );
 					input_line >> col1 >> col2;
-					input_data.column_1.push_back(col1);
-					input_data.column_2.push_back(col2);
+					input_data.column_1.push_back( col1 );
+					input_data.column_2.push_back( col2 );
 				}
 
 			}
-			file_input.close();
 		}
 		return input_data;
 	}
@@ -112,5 +109,5 @@ Result aoc::day_01()
 	const uint64_t part_2 = day_01::part_2(input);
 	timer::stop();
 
-	return { std::string(" 1: Historian Hysteria"), part_1, part_2, timer::get_elapsed_seconds()};
+	return { std::string(" 1.Historian Hysteria"), part_1, part_2, timer::get_elapsed_seconds()};
 }

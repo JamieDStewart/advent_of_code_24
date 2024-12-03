@@ -16,7 +16,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <map>
 
 /*
  * Creating a namespace in this file to add in any functions used in solving the problem
@@ -38,26 +37,22 @@ namespace day_02
 	{
 		std::vector<Report> reports = {};
 		//open the input file for reading
-		std::ifstream file_input;
-		file_input.open(input_file);
-		if (file_input.is_open())
+		if ( std::ifstream file_input( input_file ); file_input.is_open() )
 		{
-			for (std::string line; std::getline(file_input, line); )
+			for ( std::string line; std::getline( file_input, line ); )
 			{
-				if (line.length() > 0)
+				if ( !line.empty() )
 				{
 					Report current_report{};
 					uint64_t value;
-					std::stringstream input_line(line);
-					while (input_line >> value)
+					std::stringstream input_line( line );
+					while ( input_line >> value )
 					{
-						current_report.values.push_back(value);
+						current_report.values.push_back( value );
 					}
-					reports.push_back(current_report);
+					reports.push_back( current_report );
 				}
-
 			}
-			file_input.close();
 		}
 		return reports;
 	}
@@ -141,5 +136,5 @@ Result aoc::day_02()
 	const uint64_t part_2 = day_02::part_2(input);
 	timer::stop();
 
-	return { std::string(" 2: Red-Nosed Reports"), part_1, part_2, timer::get_elapsed_seconds() };
+	return { std::string(" 2.Red-Nosed Reports"), part_1, part_2, timer::get_elapsed_seconds() };
 }
