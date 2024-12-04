@@ -72,15 +72,13 @@ namespace day_04
 		{
 			for( auto c = 0; c < row_len; ++c )
 			{
-				auto p = 0;
-				if( ws.rows[r][c] == xmas[p] )
+				if( auto p = 0; ws.rows[r][c] == xmas[p] )
 				{					 
 					//Get neighbouring indexes and find remaining 'MAS'
 					for( auto [x,y] : dirs)
 					{
 						p = 1;
-						auto nc{ 0 };
-						auto nr{ 0 };
+						auto nc{ 0 }; auto nr{ 0 };
 						for ( nc = c + x, nr = r + y; nc >= 0 && nc < row_len && nr >= 0 && nr < row_count; nc += x, nr += y )
 						{
 							if( ws.rows[nr][nc] == xmas[p] )
