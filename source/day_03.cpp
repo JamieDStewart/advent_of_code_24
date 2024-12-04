@@ -59,16 +59,17 @@ namespace day_03
 		//iterate over each report and ensure that all values are ascending or descending
 		uint64_t count{};
 		std::regex regex( R"(mul\(([0-9]{1,3}),([0-9]{1,3})\))" );
-		
+
+		const auto matches_end = std::sregex_iterator();
+
 		for ( auto& instruction : input.instructions )
 		{
-			auto matches_begin = std::sregex_iterator( instruction.begin(), instruction.end(), regex );
-			auto matches_end = std::sregex_iterator();
-			for ( std::sregex_iterator i = matches_begin; i != matches_end; ++i )
+			for ( auto iter = std::sregex_iterator( instruction.begin(), instruction.end(), regex ); iter != matches_end; ++iter )
 			{
-				const std::smatch& match = *i;
-				uint64_t x = std::stoull( match[1] );
-				uint64_t y = std::stoull( match[2] );
+				const std::smatch& match = *iter;
+
+				const uint64_t x = std::stoull( match[1] );
+				const uint64_t y = std::stoull( match[2] );
 				count += x * y;
 			}
 			
@@ -87,22 +88,20 @@ namespace day_03
 		constexpr size_t do_length = 4;
 		constexpr  size_t dont_length = 7;
 
-		auto matches_end = std::sregex_iterator();
+		const auto matches_end = std::sregex_iterator();
 
 		bool skip = false;
 		for ( auto& instruction : input.instructions )
 		{
-			auto matches_begin = std::sregex_iterator( instruction.begin(), instruction.end(), regex );
-			
-			for ( std::sregex_iterator i = matches_begin; i != matches_end; ++i )
+			for ( auto iter = std::sregex_iterator( instruction.begin(), instruction.end(), regex ); iter != matches_end; ++iter )
 			{
-				const std::smatch& match = *i;
+				const std::smatch& match = *iter;
 				if ( match.length() == do_length ) { skip = false; continue; }
 				if ( match.length() == dont_length ) { skip = true; continue; }
 				if ( skip ) { continue; }
 
-				uint64_t x = std::stoull( match[1] );
-				uint64_t y = std::stoull( match[2] );
+				const uint64_t x = std::stoull( match[1] );
+				const uint64_t y = std::stoull( match[2] );
 				count += x * y;
 			}
 
