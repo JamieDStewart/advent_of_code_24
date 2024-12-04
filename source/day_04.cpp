@@ -96,8 +96,7 @@ namespace day_04
 					}
 				}
 			}			
-		}
-		
+		}	
 		return count;
 	}
 
@@ -155,6 +154,7 @@ Result aoc::day_04()
 
 	const uint64_t part_1 = day_04::part_1( input );
 	const uint64_t part_2 = day_04::part_2( input );
+
 	timer::stop();
 
 	return { std::string( " 4.Ceres Search" ), part_1, part_2, timer::get_elapsed_seconds() };
