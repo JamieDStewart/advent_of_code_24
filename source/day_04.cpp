@@ -127,8 +127,8 @@ namespace day_04
 						if( mc >= 0 && mc < row_len && mr >= 0 && mr < row_count &&
 							sc >= 0 && sc < row_len && sr >= 0 && sr < row_count )
 						{
-							if( ws.rows[mr][mc] == 'M' && ws.rows[sr][sc] == 'S' || 
-								ws.rows[mr][mc] == 'S' && ws.rows[sr][sc] == 'M' )
+							if( ( ws.rows[mr][mc] == 'M' && ws.rows[sr][sc] == 'S' ) ||
+								( ws.rows[mr][mc] == 'S' && ws.rows[sr][sc] == 'M' ) )
 							{
 								++found_mas_count;
 							}
