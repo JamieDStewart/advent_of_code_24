@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "year": 2024,
+  "title": "Advent of Code 2024",
+  "target": "aoc_2024",
+  "input_dir": "input",
+  "sample_dir": "sample",
+  "default_timeout_seconds": 60,
+  "days": [
+    {
+      "day": 1,
+      "title": "Historian Hysteria",
+      "sample": { "part_1": "11", "part_2": "31" }
+    },
+    {
+      "day": 2,
+      "title": "Red-Nosed Reports",
+      "sample": { "part_1": "2", "part_2": "4" }
+    },
+    {
+      "day": 3,
+      "title": "Mull It Over",
+      "sample": { "part_1": "161", "part_2": "48" }
+    },
+    {
+      "day": 4,
+      "title": "Ceres Search",
+      "sample": { "part_1": "18", "part_2": "9" }
+    }
+  ]
+}
