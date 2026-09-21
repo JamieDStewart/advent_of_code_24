@@ -41,3 +41,8 @@
 # ignore input data during the advent
 **/data/
 **/input/
+# CMake build trees
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
